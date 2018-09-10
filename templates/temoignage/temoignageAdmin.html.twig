@@ -1,0 +1,22 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block body %}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+<div class="table-bordered pl-2 pr-2 pt-5 pb-5">
+<table class="table table-striped">
+	<thead>
+		<th>nom</th><th>email</th><th>titre</th><th>temoignage</th><td>Action</td>
+	</thead>
+	<tbody>
+			{% for temoignage in temoignages %}
+			<tr>
+				<td>{{ temoignage.nom }}</td><td>{{ temoignage.email }}</td><td>{{ temoignage.titre }}</td><td>{{ temoignage.temoignage }}</td><td><a href="{{ path('temoignage_admin_delete',{'id': temoignage.id}) }}" class="btn btn-primary">Suprime</a></td>
+			</tr>
+			{% endfor %}
+	</tbody>
+</table>
+</div>
+{% else %}	
+	{% include 'security/login.html.twig' %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'layoutAdmin.html.twig' %}
+{% block body %}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+<div class="table-bordered pl-2 pr-2 pt-5 pb-5">
+    <div class="row">
+        <div class="col">
+            <h1>Page creation</h1><hr>
+
+    {{ form_start(form) }}
+        <fieldset class="form-group">
+            <label for="titre">Titre </label>
+            <span class="text-danger font-weight-bold">*</span>
+            {{ form_widget(form.titre,{'attr': {'class': 'form-control'}}) }}
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="contenu">Contenu </label>
+            <span class="text-danger font-weight-bold">*</span>
+            {{ form_widget(form.contenu,{'attr': {'class': 'form-control'}}) }}
+        </fieldset>
+
+        <input type="submit" class="btn btn-info mb-3" value="Create" />
+    {{ form_end(form) }}
+
+            <a class="btn btn-info mb-3" href="{{ path('page_admin_show') }}">Back to the list</a>
+        </div>
+    </div>
+</div>
+{% else %}  
+    {% include 'security/login.html.twig' %}
+{% endif %}
+{% endblock %}

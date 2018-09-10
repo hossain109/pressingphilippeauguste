@@ -1,0 +1,34 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+<div class="table-bordered pl-2 pr-2 pt-5 pb-5">
+	<div class="container pt-5 pb-5">
+					<b>Tarifs pressing paris</b>
+				<p><b>LEPRESSING</b> est un établissement adhérent au CFET, Conseil Féréral de l’entretien des textiles Pressings de France.<br>
+		Tarifs valable au 1er Janvier 2018, modifiable sans préavis.</p>
+
+		<p><a class="btn btn-info" href="{{ path('contact') }}" >Demander un devis</a></p>
+	</div>
+	<table class="table text-center" >
+		<tr>
+			{% for categorie in categories %}
+				<th class="text-info">{{categorie.categorie}}</th>
+			{% endfor %}
+		</tr>
+		
+		<tr>		
+			{% for produit in produits %}
+		<td>
+    		{% for key, value in produit %}
+
+        	<div class="row"><p class="col bg-light">{{ value.nom }}</p>&nbsp;&nbsp;&nbsp;<p class="col">{{ value.prix }}	&euro;</p><br></div>
+
+    		{% endfor %}
+		</td>
+			{% endfor %}
+ 		</tr>
+	</table>
+	<img src= "{{ asset('images/le3.jpg') }}"  style="height:200px;width:70%;" alt="Sample image">
+	<p>&nbsp;</p>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'layout.html.twig' %}
+{% block body %}
+<div class="table-bordered pl-2 pr-2 pt-5 pb-5">
+	<img class="img-fluid card-img-top" alt="image de temoignages" src="{{ asset('images/temoign.jpg') }}" >
+	 <br><h4>Les Tmoignages</h4>
+			{% for avis in avises %}
+				<div class="alert alert-info border-bottom-0">
+					<div class="row">
+					    <i class="fas fa-quote-left"></i>&nbsp;
+						<h3 class="alert-heading text-uppercase">{{avis.titre}}</h3>&nbsp;
+						<i class="fas fa-quote-right"></i>
+					</div>
+    				<p class="lead">{{avis.temoignage}}</p>
+					<div class="text-right font-italic">{{avis.nom}}</div>
+					<div class="text-right font-italic"><a href="{{ avis.siteentreprise }}"> {{ avis.siteentreprise }}</a></div>
+				</div>
+			{% endfor %}
+	<div class="container">
+		<p class="text-justify">Si vous avez apprécié nos prestation, nous vous serions très reconnaissants si vous pouviez prendre quelques instants pour nous laisser votre avis sur la qualité de notre prestation à l'aide du formulaire ci-dessous, ou soit par mail.Par avance, nous vous remercions chaleureusement pour votre support.<br><b> L'équipe Pressing Phlippe Auguste.</b></p>
+	</div>
+	<div class="container">
+		<p><span class="text-danger font-weight-bold">*</span> Champ obligatoire</p>
+		{{ form_start(form) }}
+		<fieldset class="form-group col-md-6">
+			<label for="nom">Nom et Prénom</label>
+			<span class="text-danger font-weight-bold">*</span>
+			{{ form_widget(form.nom,{'attr': {'class': 'form-control'}}) }}
+			<span class="text-muted">Quels sont vos nom et prénom ?</span>
+		</fieldset>
+		<fieldset class="form-group col-md-6">
+			<label for="email">Email</label>
+			<span class="text-danger font-weight-bold">*</span>
+			{{ form_widget(form.email,{'attr': {'class': 'form-control'}}) }}
+			<span class="text-muted">Quelle est votre adresse courriel ?</span>
+		</fieldset>
+		<fieldset class="form-group col-md-6">
+			<label for="nomentreprise">Nom d'entreprise</label>
+			{{ form_widget(form.nomentreprise,{'attr': {'class': 'form-control'}}) }}
+			<span class="text-muted">Quel est le nom de votre entreprise ?</span>
+		</fieldset>
+		<fieldset class="form-group col-md-6">
+			<label for="siteentreprise">Nom de Site Entreprise</label>
+			{{ form_widget(form.siteentreprise,{'attr': {'class': 'form-control'}}) }}
+			<span class="text-muted">Votre entreprise a-t-elle un site Web ?</span>
+		</fieldset>
+		<fieldset class="form-group col-md-6">
+			<label for="titre">Titre</label>
+			{{ form_widget(form.titre,{'attr': {'class': 'form-control'}}) }}
+			<span class="text-muted">Un titre pour votre témoignage.</span>
+		</fieldset>
+		<fieldset class="form-group col-md-6">
+			<label for="temoignage">Temoignage</label>
+			<span class="text-danger font-weight-bold">*</span>
+			{{ form_widget(form.temoignage,{'attr': {'class': 'form-control'}}) }}
+			<span class="text-muted">Que pensez-vous de nous ?</span>
+		</fieldset>
+		<button type="submit" class="btn btn-primary ml-3">Ajouter Un Temoignage</button>
+		{{ form_end(form) }}
+
+	</div>
+</div>
+
+{% endblock %}

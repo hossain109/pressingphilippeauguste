@@ -1,0 +1,26 @@
+<div class=" bg-dark">
+	<div class="row pt-5">
+		<div class="col-md-4" >
+			{{ render(controller('App\\Controller\\PageController::menu')) }}
+		</div>
+		
+		<address class="col-md-4 text-white" >
+			<h4 class="text-white">Contact</h4>
+          <p>{{pressing}}<br>{{address}}<br>{{ville}}<br>Tél: {{phone}}</p>
+		</address>
+
+		<div class="col-md-4 text-white" >
+			<h4 class="text-white">Demande de rappel</h4>
+			<p>Laissez nous vos coordonnées, un conseiller vous rappelle immédiatement:</p>
+
+                {% for message in app.flashes('success') %}
+				    <div class="alert alert-success">
+				        {{ message }}
+				    </div>
+				{% endfor %}
+
+			{{ render(url('pageForm')) }}
+		</div>
+	</div>
+			<p class="text-white ml-5 font-italic">lepressing 2018</p>
+</div>

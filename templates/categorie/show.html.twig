@@ -1,0 +1,31 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block body %}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+<div class="table-bordered pl-2 pr-2 pt-5 pb-5">
+	<h1>Les Categories</h1>
+	<table class="table table-striped text-center">
+		<thead>
+			<th>Categories</th><th>Actions</th>
+		</thead>
+		<tbody>
+		{% for categorie in categories %}
+		    <tr>
+		    	<td>{{categorie.categorie}}</td>
+		    	<td>
+		    		<a class="btn btn-info" href="{{path('categorie_admin_delete',{'id': categorie.id })}}">Supression</a>&nbsp;
+					<a class="btn btn-info" href="{{path('categorie_admin_edit',{'id': categorie.id })}}">Modification</a>
+		    	</td>
+		    </tr>
+		{% endfor %}
+		</tbody>
+	</table>
+
+	<div>
+            <a class="btn btn-info mb-3" href="{{ path('categorie_admin_create') }}">Create a new page</a>
+ 	</div>
+ </div>
+{% else %}	
+	{% include 'security/login.html.twig' %}
+{% endif %}
+{% endblock %}

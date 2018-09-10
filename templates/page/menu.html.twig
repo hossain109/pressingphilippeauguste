@@ -1,0 +1,5 @@
+{% for page in pages %}
+ <ul class="nav flex-column nav-pills text-center">
+ 	<li class="nav-item"><a  class="text-white" target="_blank" href="{{path('page', {'id': page.id } )}}">{{page.titre}}</a></li>
+ </ul>
+{% endfor %}

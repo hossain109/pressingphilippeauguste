@@ -1,0 +1,31 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block body %}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+<div class="table-bordered pl-2 pr-2 pt-5 pb-5">
+	<h1>Produits Tarifs</h1><hr>
+	<table class="table table-striped text-center">
+		<thead>
+			<th>Categorie</th><th>Nom</th><th>Prix</th><th>Dispoinibilité</th><th>Les Actions</th>
+		</thead>
+		<tbody>
+		{% for produit in produits %}
+		    <tr>
+		    	<td>{{produit.categorie.categorie}}</td><td>{{produit.nom}}</td><td>{{produit.prix}}</td><td>{{produit.disponible}}</td>
+		    	<td>
+				<a class="btn btn-info" href="{{path('tarif_admin_delete',{'id': produit.id })}}">Supression</a>&nbsp;
+				<a class="btn btn-info" href="{{path('tarif_admin_edit',{'id': produit.id })}}">Modification</a>
+		    	</td>
+		    </tr>
+		{% endfor %}
+		</tbody>
+	</table>
+
+	<div>
+            <a class="btn btn-info mb-3" href="{{ path('tarif_admin_create') }}">Create a new page</a>
+	</div>
+<div class="table-bordered pl-2 pr-2 pt-5 pb-5">
+{% else %}	
+	{% include 'security/login.html.twig' %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,78 @@
+<div id ="header" class="clean-top">
+	<div class="header-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<p class="header-info">Contactez nous&nbsp;&nbsp;<span class="contact"><i class="fas fa-phone-volume"></i>&nbsp;&nbsp;01 56 06 97 80</span> </p> &nbsp;| &nbsp;<p class="header-info"><a href="#">philippeauguste@philippeauguste.com</a></p>
+					<p class="font-italic">Lundi Au Samedi de 8.00 à 19.30H(sans interruption)</p>
+				</div>
+				<div class="col-md-3">
+					<ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+						<li class="nav-item">
+							<a class="nav-link p-2" href="https://twitter.com/getbootstrap" target="_blank" rel="noopener" aria-label="Google Plus"><i class="fab fa-google-plus-g"></i></a>
+						</li>
+						<li>
+							<a class="nav-link p-2" href="https://twitter.com/getbootstrap" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+						</li>
+						<li>
+							<a class="nav-link p-2" href="https://twitter.com/getbootstrap" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<h1 class="text-center">
+			<img src="{{asset('images/logo.png')}}" alt="logo">
+		</h1>
+	</div>
+		<div class="container">
+			<div class="navbar navbar-expand-lg navbar-light bg-light">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    				<span class="navbar-toggler-icon"></span>
+  				</button>
+   				<div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+					<ul class="nav nav-pills">			
+						<li class="nav-item">
+						<a class="nav-link"  href="{{path('home_admin_show')}}">Accueil Admin</a>
+						</li>
+
+						<li class="nav-item dropdown">
+							        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							         Tarifs Pressing Admin
+							        </a>
+							        <div class="dropdown-menu">
+								          <a class="dropdown-item" href="{{path('tarif_admin_show')}}">Produits Admin</a>
+								          <a class="dropdown-item" href="{{path('categorie_admin_show')}}">Categories Admin</a>
+							        </div>
+						</li>
+
+						<li class="nav-item">
+						<a class="nav-link" href="{{path('temoignage_admin')}}">Temoignages Admin</a>
+						</li>
+						<li class="nav-item dropdown">
+							        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							         Contact Admin
+							        </a>
+							        <div class="dropdown-menu">
+								          <a class="dropdown-item" href="{{path('rappel_admin')}}">Demande de Rappele</a>
+								          <a class="dropdown-item" href="{{path('contact_admin')}}">Contact Info</a>
+							        </div>
+						</li>
+						<li class="nav-item dropdown">
+							        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							         Admin
+							        </a>
+							        <div class="dropdown-menu">
+								          <a class="dropdown-item" href="{{ path('user_show') }}">Compte</a>
+								          {% if app.user %}
+								          <a class="dropdown-item" href="{{ path('logout') }}">Logout</a>
+								      {% endif %}
+							        </div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+</div>

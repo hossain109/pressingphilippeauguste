@@ -1,0 +1,31 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+body{
+	border-top:4px solid blue;
+	border-radius: 5px !important;
+	margin-top:5px;
+	margin-bottom:5px;
+	margin-left:20px;
+	margin-right:20px;
+
+	h5,h4,h3{
+		color:#376aff;
+	}
+	.clean-top{
+		background: #F6F6F6;
+		.header-top{
+			min-height:200 px;
+			background: #f0ebf6; 
+			.font-italic{
+				font-size: 12px;
+				color: blue;
+			}
+			.header-info{
+				display:inline;
+				.contact{
+					color:green;
+				}
+			}
+		}
+	}
+}

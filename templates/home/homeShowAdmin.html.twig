@@ -1,0 +1,29 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block body %}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+	<div class="table-bordered pl-2 pr-2 pt-5 pb-5">
+	  	<table class="table table-striped">
+	  		<thead>
+	  			<th scope="col">Id</th><th scope="col">Image alternatif</th><th scope="col">Image path</th><th scope="col">Libelle</th><th scope="col">Action</th>
+	  		</thead>
+	  		<tbody>
+	  {% for image in images %}
+		  		<tr>
+		  			<td>{{image.id}}</td><td>{{image.alt}}</td><td>{{image.path}}</td><td>{{image.libelle}}</td><td><a class="btn btn-info" href="{{path('home_admin_delete', {'id': image.id }) }}">Delete</a></td>
+		  		</tr>
+	  {% endfor %}
+	  		</tbody>
+	  	</table>
+	  	<div class="row">
+	  		{% if counts<=4 %}
+	  		<a href="{{path('home_admin')}}" class="btn btn-primary ml-3 mt-3 mb-3">Create a image</a>
+	  		{% else %}
+	  			<a href="{{path('home_admin')}}" class="btn btn-primary ml-3 mt-3 mb-3 disabled">Create a image</a>
+	  		{% endif %}
+	  	</div>	  
+	</div>
+{% else %}	
+	{% include 'security/login.html.twig' %}
+{% endif %}
+{% endblock %}

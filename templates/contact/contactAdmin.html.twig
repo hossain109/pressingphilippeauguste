@@ -1,0 +1,22 @@
+{% extends 'layoutAdmin.html.twig' %}
+{% block body %}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+<div class="table-bordered pl-2 pr-2 pt-5 pb-5">
+	<h1>Les Contacts</h1><hr>
+<table class="table table-striped">
+	<thead>
+		<th>nom</th><th>portable</th><th>email</th><th>sujet</th><th>message</th><th>heure du message</th><th>Action</th>
+	</thead>
+	<tbody>
+			{% for contact in contacts %}
+			<tr>
+				<td>{{ contact.nom }}</td><td>{{ contact.portable }}</td><td>{{ contact.email }}</td><td>{{ contact.sujet }}</td><td>{{ contact.message }}</td><td>{{ contact.date|date("d/m/Y") }}</td><td><a href="{{ path('contact_admin_delete',{'id': contact.id}) }}" class="btn btn-primary">Suprime</a></td>
+			</tr>
+			{% endfor %}
+	</tbody>
+</table>
+</div>
+{% else %}	
+	{% include 'security/login.html.twig' %}
+{% endif %}
+{% endblock %}

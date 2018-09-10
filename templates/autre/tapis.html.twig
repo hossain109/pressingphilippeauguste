@@ -1,0 +1,61 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+	<div class="table-bordered pl-2 pr-2 pt-5 pb-5">
+		<h1 class="mt-3 mb-3">Pressing Philippe Auguste, un veritable savoir-faire dans l'entretien des tapis</h1>
+		<div class="row">
+			<div class="col-md-9">
+				<h3>NETTOYAGE DE TAPIS ET TAPISSERIE EN RÉGION PARISIENNE</h3>
+				<p class="text-justify">
+				<img class="float-left mr-3" src="{{ asset('images/pic1.png')}}" alt="image" height="192" width="288">
+				Le<strong> nettoyage de tapis</strong> nécessite un savoir-faire et des compétences particulières, Pressing Philippe Auguste spécialiste du nettoyage de tapis à Paris et en région parisienne, vous propose des prestations de qualité. Notre expertise, notre savoir-faire et nos services personnalisés sont de véritables gages de qualité.
+				Nous restons à l’écoute de vos attentes et vos exigences. Nos prestations sont destinées aussi bien aux particuliers qu’aux entreprises.
+				</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<h3>DIFFÉRENTES SORTES DE TAPIS</h3>
+				<p class="text-justify">
+					<img class="float-right ml-3" src="{{ asset('images/pic1.png')}}" alt="image" height="246" width="300">
+					En matière de tapis, tout est possible, le mode de fabrication, les couleurs, les motifs, les textures et les matières se déclinent à l’infini. Il existe différentes sortes de tapis, selon le style de votre intérieure et votre choix de décoration: ils peuvent être classiques ou contemporains.</p>
+
+				<p class="text-justify">Pour une décoration moderne, choisissez un tapis unis ou texturé, il peut être à poils ras ou à poil longs. Ces tapis peuvent être fabriqués à partir de laine, de polypropylène, de polyester ou d’acrylique.</p>
+
+				<p class="text-justify">Si vous préférez rester dans le classique, vous pouvez opter par exemple pour les tapis classiques, qui imitent les tapis d’Orient, à des prix plus abordables. Les tapis d’Orient, quant à eux, sont des tapis noués main: ils viennent d’Iran, d’Afghanistan, d’Inde ou d’Ouzbékistan. Leur grande valeur leur vient du fait qu’ils sont fait main, de manière artisanale et que chaque tapis est de ce fait unique.</p>
+
+				<p>Vous pouvez aussi opter pour les Kilim. Ces tapis, originaires de Turquie, sont tissés à plat, en laine ou en coton. Grâce à cette technique de fabrication, les Kilim sont souples et légers, contrairement aux tapis à points noués, qui eux ont un aspect velours. Toutefois, les Kilim, n’en sont pas moins résistants, ils peuvent en effet être mis par terre ou servir pour décorer les murs.
+				</p>
+				<p>&nbsp;</p>
+			<h3>L’ENTRETIEN</h3>
+			<p class="text-justify">
+				<img class="float-left mr-3" src="{{ asset('images/pic1.png')}}" alt="image" height="281" width="422">
+				Le nettoyage de tapis n’est pas un processus anodin, il est donc recommandé de faire nettoyer son tapis par un professionnel qui en prendra grand soin. En effet, des produits d’entretien ou un mode de nettoyage inadapté abiment les tapis et les vieillissent prématurément. Pour assurer la plus grande longévité à votre tapis, faites confiance à un spécialiste du nettoyage de tapis. Chez Colblanc, nos méthodes de nettoyage sont adaptées à la nature de la fibre de vos tapis et à leur tissage.
+			</p>
+			<p>Chez Pressing Philippe Auguste, les tapis sont dépoussiérés en profondeur grâce à une machine adaptée.</p>
+
+			<p>Cette étape est en effet très importante, car elle permet d’éliminer des allergènes tels que la poussière et les acariens. Vos tapis sont ensuite lavés avec des produits adéquats et les tâches spécifiques sont traitées selon leur nature. Les tapis en fibres délicates telle que la soie reçoivent un traitement adapté dans des machines spécifiques, afin de préserver leur bonne tenue et longévité.</p>
+
+			<p>Nous sommes en mesure de nettoyer tout type de tapis (tapis classique, tapis d’Orient, Kilim, etc.) et quelle que soit leur taille. Colblanc met tout en œuvre pour répondre à vos attentes en redonnant fraicheur et propreté à vos tapis.</p>
+
+			<p>N’hésitez pas à nous contactez pour un devis gratuit.<a href="{{path('contact')}}" class="btn btn-success ml-3">Je remplis le formulaire</a></p>
+			</div>
+			<div class="col-md-3">
+				<h5>Pressing Philippe Auguste</h5>
+				<address>
+					 <p>{{address}}<br>{{ville}}<br>Tél: {{phone}}</p>
+				</address>
+				<strong>Email:</strong>
+				<a href="mailto:sohrab_sust_cse@yahoo.com">sohrab_sust_cse@yahoo.com</a>
+				<hr>
+				<h3>Horaires</h3>
+				<ul class="list-unstyled">
+					<li>Lundi - Vendredi : 7h à 19.30h </li>
+					<li>Samedi : 7.30h à 19.30h</li>
+				</ul>
+				<hr>
+				<strong>Demande de Rappel</strong>
+				{{ render(url('pageForm')) }}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

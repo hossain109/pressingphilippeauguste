@@ -1,0 +1,10 @@
+twig:
+    #paths: ['%kernel.project_dir%/templates']
+    #debug: '%kernel.debug%'
+    #strict_variables: '%kernel.debug%'
+
+  globals:
+    pressing: 'PRESSING PHILIPPE AUGUSTE'
+    address: '81 av PHILIPPE AUGUSTE'
+    ville: '75011 PARIS'
+    phone: '01.56.06.97.80'

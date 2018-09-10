@@ -1,0 +1,23 @@
+#index:
+#    path: /
+ #   controller: App\Controller\DefaultController::index
+
+comment_page:
+      path: /commentaire
+      controller: App\Controller\CommentController::index
+
+home:
+  path: /
+  controller: App\Controller\HomeController::index
+
+pageMenu:
+  path: page/menu
+  controller: App\Controller\PageController::menu
+
+page:
+  path: /page/{id}
+  controller: App\Controller\PageController::page
+
+pageForm:
+  path: /form
+  controller: App\Controller\PageController::pageform

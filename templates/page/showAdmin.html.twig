@@ -1,0 +1,27 @@
+{% extends 'layoutAdmin.html.twig' %}
+{% block body %}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+<div class="table-bordered pl-2 pr-2 pt-5 pb-5">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>titre</th><th>contenu</th><th>Actions</th>
+			</tr>
+		</thead>
+		{% for page in pages %}
+		<tbody>
+			<tr>
+				<td>{{page.titre}}</td><td>{{page.contenu}}</td><td><a class="btn btn-info mb-3" href="{{path('page_admin_edit',{'id':page.id})}}">Modifier</a>&nbsp;<a class="btn btn-info" href="{{path('page_admin_delete',{'id':page.id})}}">Suprimmer</a></td>
+			</tr>
+		</tbody>
+		{% endfor %}
+	</table>
+
+	<div>
+	    <a  class="btn btn-info mb-3" href="{{ path('page_admin_create') }}">Create a new page</a>
+	</div>
+</div>
+{% else %}	
+	{% include 'security/login.html.twig' %}
+{% endif %}
+{% endblock %}

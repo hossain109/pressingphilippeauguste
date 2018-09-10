@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+{% block body %}
+<div class="table-bordered pl-2 pr-2 pt-5 pb-5">
+	<div class="row">
+		<div class="col-md-9 offset-3">
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success">
+					{{ message }}
+			</div>
+		{% endfor %}
+	<strong> Créer son compte</strong><p>&nbsp;</p>
+	{{ form_start(form) }}
+	<fieldset class="form-group col-md-6">
+	<label for="nom">Username </label>
+	<span class="text-danger font-weight-bold">*</span>
+	    {{ form_widget(form.username,{'attr': {'class': 'form-control'}}) }}
+	</fieldset>
+	<fieldset class="form-group col-md-6">
+	<label for="nom">Email</label>
+	<span class="text-danger font-weight-bold">*</span>
+	    {{ form_widget(form.email,{'attr': {'class': 'form-control'}}) }}
+	</fieldset>
+	<fieldset class="form-group col-md-6">
+	<label for="nom">Password</label>
+	<span class="text-danger font-weight-bold">*</span>
+	    {{ form_widget(form.plainPassword.first,{'attr': {'class': 'form-control'}}) }}
+	</fieldset>
+	 <fieldset class="form-group col-md-6">  
+	 <label for="nom">Repeat Password </label>
+	 <span class="text-danger font-weight-bold">*</span> 
+	    {{ form_widget(form.plainPassword.second,{'attr': {'class': 'form-control'}}) }}
+	</fieldset>    
+
+	    <button type="submit" class="btn btn-info ml-3 mb-3" >Register!</button>
+	{{ form_end(form) }}
+		</div>
+	</div>
+</div>
+{% endblock %}

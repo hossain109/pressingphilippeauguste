@@ -1,0 +1,71 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+<div class="table-bordered pl-2 pr-2 pt-5 pb-5">
+	<div class="row">
+		<!--Google Map -->
+		<div class="container pb-3">
+			<iframe width="100%" height="400" frameborder="0" style="border:0;" src="https://www.google.com/maps/embed/v1/place?q=81%20avanue%20philippe%20auguste%2075011&key=AIzaSyAC5hMHRhjYd6QdpPbn7NWskMk3fzO0v1M" allowfullscreen></iframe>
+        </div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			    {% for message in app.flashes('success') %}
+				    <div class="alert alert-success">
+				        {{ message }}
+				    </div>
+				{% endfor %}
+		<h4>Contact</h4>
+		<p><span class="text-danger font-weight-bold">*</span> Champ obligatoire</p>
+		{{ form_start(form) }}
+		<fieldset class="form-group col-md-6">
+			<label for="nom">Votre nom </label>
+			<span class="text-danger font-weight-bold">*</span>
+			{{ form_widget(form.nom,{'attr': {'class': 'form-control'}}) }}
+		</fieldset>
+		<fieldset class="form-group col-md-6">
+			<label for="nom">Votre telepohone portable </label>
+			<span class="text-danger font-weight-bold">*</span>
+			{{ form_widget(form.portable,{'attr': {'class': 'form-control'}}) }}
+		</fieldset>
+		<fieldset class="form-group col-md-6">
+			<label for="email">Votre email</label>
+			<span class="text-danger font-weight-bold">*</span>
+			{{ form_widget(form.email,{'attr': {'class': 'form-control'}}) }}
+		</fieldset>
+		<fieldset class="form-group col-md-6">
+			<label for="sujet">Sujet</label>
+			<span class="text-danger font-weight-bold">*</span>
+			{{ form_widget(form.sujet,{'attr': {'class': 'form-control'}}) }}
+		</fieldset>
+		<fieldset class="form-group col-md-6">
+			<label for="message">Votre message</label>
+			<span class="text-danger font-weight-bold">*</span>
+			{{ form_widget(form.message,{'attr': {'class': 'form-control'}}) }}
+		</fieldset>
+		<button type="submit" class="btn btn-primary m-3">Envoyer</button>
+		{{ form_end(form) }}
+		</div>
+
+		<div class="col-md-6" >
+			<h3>Pressing Philippe Auguste</h3>
+			<p class="text-muted font-weight-bold">Haute Qualité et moins cher.</p>
+			<hr>
+			<ul class="list-unstyled">
+				<li><strong>81 av PHILIPPE AUGUSTE</strong>
+				<li><strong>75011 PARIS</strong></li>
+				<li><strong>Téléphone : 01.56.06.97.80</strong></li>
+			</ul>
+			 <p><strong>Email : pressing@pressing.com</strong></p>
+			 <hr>
+			 <strong> Horaires d’ouvertures</strong>
+			 <ul class="list-unstyled">
+			 	<li>Du Lundi Au Samedi de 8.00 à 19.30H</li>
+			 	<li>sans interruption.</li>
+			 </ul>
+
+
+		</div>
+	</div>
+</div>
+{% endblock %}
